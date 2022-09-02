@@ -24,12 +24,7 @@ spring:
             - Path=/api/products/**, /api/categories/**
           filters:
             - AuthenticationFilter
-        - id: car-apigateway
-          uri: http://localhost:8008/
-          predicates:
-            - Path=/api-gateway/**
-          filters:
-            - AuthenticationFilter
+
     config:
       uri: http://localhost:8888
       fail-fast: false
