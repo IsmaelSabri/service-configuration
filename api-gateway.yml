@@ -1,0 +1,54 @@
+server:
+  port: 8079
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: users-microservice
+          uri: lb://users-microservice
+          predicates:
+            - Path=/user/**, /**
+          filters:
+            - AuthenticationFilter
+        - id: booking-microservice
+          uri: lb://booking-microservice
+          predicates:
+            - Path=/api/booking/**
+          filters:
+            - AuthenticationFilter
+        - id: product-microservice
+          uri: lb://product-microservice
+          predicates:
+            - Path=/api/products/**, /api/categories/**
+          filters:
+            - AuthenticationFilter
+        - id: car-apigateway
+          uri: http://localhost:8008/
+          predicates:
+            - Path=/api-gateway/**
+          filters:
+            - AuthenticationFilter
+    config:
+      uri: http://localhost:8888
+      fail-fast: false
+      retry:
+        maxAttempts: 20
+
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    '[org.springframework.cloud.gateway]': TRACE
+
+jwt:
+  secret: testing
+  validity: 20
+  authDisabled: true
