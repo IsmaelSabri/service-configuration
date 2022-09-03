@@ -1,8 +1,6 @@
 server:
   port: 8079
 spring:
-  application:
-    name: api-gateway
   cloud:
     gateway:
       routes:
@@ -26,7 +24,6 @@ spring:
             - AuthenticationFilter
 
     config:
-      uri: http://localhost:8888
       fail-fast: false
       retry:
         maxAttempts: 20
