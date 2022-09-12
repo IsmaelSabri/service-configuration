@@ -40,7 +40,7 @@ eureka:
  # level:
   #  '[org.springframework.cloud.gateway]': TRACE
 
-jwt:
-  secret: testing
-  validity: 20
-  authDisabled: true
+#jwt:
+ # secret: testing
+  #validity: 20
+  #authDisabled: true
