@@ -36,9 +36,9 @@ eureka:
   instance:
     prefer-ip-address: true
 
-logging:
-  level:
-    '[org.springframework.cloud.gateway]': TRACE
+#logging:
+ # level:
+  #  '[org.springframework.cloud.gateway]': TRACE
 
 jwt:
   secret: testing
