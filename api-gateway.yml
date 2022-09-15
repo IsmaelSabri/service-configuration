@@ -1,4 +1,19 @@
-
+server:
+  port: 8079
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: booking-microservice
+          uri: lb://booking-microservice
+          predicates:
+            - Path=/api/booking/**
+        - id: product-microservice
+          uri: lb://product-microservice
+          predicates:
+            - Path=/api/products/**, /api/categories/**
 
 #logging:
  # level:
