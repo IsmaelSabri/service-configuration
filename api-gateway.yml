@@ -26,7 +26,8 @@ spring:
           uri: lb://flat-microservice
           predicates:
             - Path=/flats/**, /**
-
+          filters:
+              AuthFilter
 #logging:
  # level:
   #  '[org.springframework.cloud.gateway]': TRACE
