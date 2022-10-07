@@ -2,13 +2,13 @@ admin-paths:
 
   paths:
 
-    - uri: "/flats/mensaje"
+    - uri: "/flats/save"
 
-      method: "GET"
+      method: "POST"
 
     - uri: "/flats/mensaje/{1}[1-9]+[0-9]*"
 
-      method: "GET"
+      method: "POST"
 
     - uri: "/flats/save/{1}[1-9]+[0-9]*"
 
