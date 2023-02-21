@@ -27,11 +27,18 @@ spring:
           predicates:
             - Path=/flats/**, /**
 
+
   #logging:
   # level:
   #  '[org.springframework.cloud.gateway]': TRACE
 
   #jwt:
   # secret: testing
+#logging:
+ # level:
+  #  '[org.springframework.cloud.gateway]': TRACE
+
+#jwt:
+ # secret: testing
   #validity: 20
   #authDisabled: true
