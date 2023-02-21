@@ -1,0 +1,37 @@
+server:
+  port: 8079
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: booking-microservice
+          uri: lb://booking-microservice
+          predicates:
+            - Path=/api/booking/**
+        - id: product-microservice
+          uri: lb://product-service
+          predicates:
+            - Path=/api/products/**, /api/categories/**
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**, /**
+        - id: house-microservice
+          uri: lb://house-microservice
+          predicates:
+            - Path=/houses/**, /**
+        - id: flat-microservice
+          uri: lb://flat-microservice
+          predicates:
+            - Path=/flats/**, /**
+
+  #logging:
+  # level:
+  #  '[org.springframework.cloud.gateway]': TRACE
+
+  #jwt:
+  # secret: testing
+  #validity: 20
+  #authDisabled: true
