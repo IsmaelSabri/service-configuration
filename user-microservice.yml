@@ -4,7 +4,7 @@ spring:
   application:
     name: USER-MICROSERVICE
   datasource:
-    url: jdbc:mysql://localhost:3307/users
+    url: jdbc:mysql://localhost:3306/users
     username: isma
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
