@@ -17,15 +17,19 @@ spring:
         - id: auth-service
           uri: lb://auth-service
           predicates:
-            - Path=/auth/**, /**
+            - Path=/auth/**
         - id: house-microservice
           uri: lb://house-microservice
           predicates:
-            - Path=/houses/**, /**
+            - Path=/houses/**
         - id: flat-microservice
           uri: lb://flat-microservice
           predicates:
             - Path=/flats/**, /**
+        - id: user-microservice
+          uri: lb://user-microservice
+          predicates:
+            - Path=/users/**
 
 
   #logging:
