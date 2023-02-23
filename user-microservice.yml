@@ -19,6 +19,16 @@ spring:
 eureka:
   instance:
     instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+
+  logging:
+    level:
+      com:
+        netflix:
+          eureka: debug
+          discovery: debug
 
 management:
   health:
