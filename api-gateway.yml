@@ -4,26 +4,6 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: booking-microservice
-          uri: lb://booking-microservice
-          predicates:
-            - Path=/api/booking/**
-        - id: product-microservice
-          uri: lb://product-service
-          predicates:
-            - Path=/api/products/**, /api/categories/**
-        - id: auth-service
-          uri: lb://auth-service
-          predicates:
-            - Path=/auth/**
-        - id: house-microservice
-          uri: lb://house-microservice
-          predicates:
-            - Path=/houses/**
-        - id: flat-microservice
-          uri: lb://flat-microservice
-          predicates:
-            - Path=/flats/**, /**
         - id: user-microservice
           uri: lb://user-microservice
           predicates:
