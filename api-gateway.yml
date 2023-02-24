@@ -2,12 +2,15 @@ spring:
   main:
     web-application-type: reactive
   cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
     gateway:
       routes:
         - id: user-microservice
-          uri: lb://user-microservice
+          uri: lb://USER-MICROSERVICE
           predicates:
-            - Path=/users/**, /**
+            - Path=/**
 
 eureka:
   instance:
