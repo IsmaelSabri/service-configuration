@@ -10,8 +10,27 @@ spring:
         - id: user-microservice
           uri: lb://USER-MICROSERVICE
           predicates:
-            - Path=/**
-
+            - Path=/users/**
+        - id: booking-microservice
+          uri: lb://booking-microservice
+          predicates:
+            - Path=/api/booking/**
+        - id: product-microservice
+          uri: lb://product-service
+          predicates:
+            - Path=/api/products/**, /api/categories/**
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+        - id: house-microservice
+          uri: lb://house-microservice
+          predicates:
+            - Path=/houses/**
+        - id: flat-microservice
+          uri: lb://flat-microservice
+          predicates:
+            - Path=/flats/**, /**
 eureka:
   instance:
     prefer-ip-address: true
