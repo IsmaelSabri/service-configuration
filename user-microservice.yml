@@ -2,7 +2,7 @@
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/users
+    url: jdbc:mysql://localhost:3306/db_nueva
     username: yo
     password: admin
     driver-class-name: com.mysql.jdbc.Driver
