@@ -1,10 +1,20 @@
 spring:
+  application:
+    name: api-gateway
+  profiles:
+    active: development
   main:
     web-application-type: reactive
   cloud:
     loadbalancer:
       ribbon:
         enabled: false
+    bus:
+      enabled: true
+      refresh:
+        enabled: true
+      config:
+        fail-fast: true
     gateway:
       routes:
         - id: user-microservice
@@ -47,11 +57,13 @@ eureka:
 server:
   port: 8079
 
-  #jwt:
-  # secret: testing
-#logging:
- # level:
-  #  '[org.springframework.cloud.gateway]': TRACE
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  security:
+    enabled: false
 
 #jwt:
  # secret: testing
