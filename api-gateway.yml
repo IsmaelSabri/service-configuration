@@ -9,12 +9,7 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-    bus:
-      enabled: true
-      refresh:
-        enabled: true
-      config:
-        fail-fast: true
+
     gateway:
       routes:
         - id: user-microservice
